@@ -58,4 +58,30 @@ ugotoc a nz 5
 
 
 *Symbols "__" means space
-**
+**If there is no variable where to store data, it will be created by popto, input, is
+***List of operators:
++ add
+- sub
+* multiply
+/ divide
+// div by int
+% mod
+** exponentiate
+& bitwise and
+| bitwise or
+^ bitwise xor
+~ bitwise inv
+****List of conditions:
+gt - op1 > op2
+lt - op1 < op2
+eq - op1 == op2
+ne - op1 != op2
+ge - op1 >= op2
+le - op1 <= op2
+*****List of unary conditions:
+z - op == 0
+nz - op != 0
+gt - op > 0
+lt - op < 0
+gz - op >= 0
+lz - op <= 0
