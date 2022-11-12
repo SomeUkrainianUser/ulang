@@ -1,3 +1,3 @@
 from prsr import *
-#f = input("Enter file name: ")
-parse_code('progtest.ua')
+f = input("Enter file name: ")
+parse_code('f')
