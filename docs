@@ -1,0 +1,61 @@
+Keywords
+
+print
+input
+var
+is
+push
+pop
+popto
+goto
+bgotoc
+ugotoc
+
+Syntax
+
+print [data] - prints some text or variable
+Examples:
+print c
+print "Hello__*world"
+
+input [var] [text] - stores input at [var]
+Examples:
+input a** "Enter__a:__"
+
+var [name] [value] - creates a variable
+Examples:
+var a 0
+var a "Hello__world"
+
+[math operation] is [var] - doing operation with vars and stores result at [var]
+Example:
+a +*** b is c
+x & y is z
+
+push [data] - push data on stack
+Example:
+push 5
+push 10
+
+pop - pops data from stack
+
+popto [var] - pops data and stores it
+example:
+popto a
+
+goto - does unconditional jump to some line
+Example:
+goto 7
+goto 35
+
+bgotoc [op1] [condition] [op2] [dest] - jumps to [dest] if [condition]**** between 2 operands is true
+Example:
+bgotoc a gt b 5
+
+ugotoc [condition] [op] [dest] - jumps to [dest] if [condition]***** is true
+Example:
+ugotoc a nz 5
+
+
+*Symbols "__" means space
+**
