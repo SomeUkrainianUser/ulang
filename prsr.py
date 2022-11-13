@@ -8,13 +8,8 @@ def parse_code(ua_code):
     operators = ['+', '-', '*', '/', '**', '//', '%', '&', '|', '^', '~']
     s = stack()
     i = 0
-    loop_flag = 0
-    loop_str = 0
-    wto = 0
     while i < len(lexems):
         lexem = lexems[i][0]
-        if loop_flag == 1 and wto - loop_str == 0:
-            i -= wto
         if lexem.startswith('//'): continue
         elif lexem == "print":
             if lexems[i][1].startswith('"'):
@@ -114,4 +109,3 @@ def parse_code(ua_code):
                     print(f"Error: undefined reference to {lexems[i][0]}")
                     return
         i += 1
-    print(vars)
