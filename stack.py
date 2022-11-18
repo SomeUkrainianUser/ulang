@@ -3,7 +3,7 @@ class Object:
         self.data = data
         self.next = next
 
-class stack:
+class Stack:
     top = Object(None, None)
     def push(self, d):
         obj = Object(self.top, d)
