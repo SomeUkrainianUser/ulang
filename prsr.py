@@ -2,6 +2,14 @@ from lexer import *
 from stack import *
 import operator
 
+class Macroses:
+    def call(funcaddr, returnaddr, args):
+        for i in args:
+            s.push(i)
+        return 
+    def ret():
+        pass
+
 def parse_code(ua_code):
     lexems = lexem_analysis(ua_code)
     vars = {}
