@@ -3,7 +3,7 @@ from stack import *
 import operator
 
 class Macroses:
-    def call(funcaddr, returnaddr, args):
+    def call(func, returnaddr, args):
         for i in args:
             s.push(i)
         return 
