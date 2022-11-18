@@ -6,7 +6,7 @@ def parse_code(ua_code):
     lexems = lexem_analysis(ua_code)
     vars = {}
     operators = ['+', '-', '*', '/', '**', '//', '%', '&', '|', '^', '~']
-    s = stack()
+    s = Stack()
     i = 0
     while i < len(lexems):
         lexem = lexems[i][0]
