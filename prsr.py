@@ -2,20 +2,23 @@ from lexer import *
 from stack import *
 import operator
 
-class Macroses:
-    def call(func, returnaddr, args):
-        for i in args:
-            s.push(i)
-        return 
-    def ret():
-        pass
-
-def parse_code(ua_code):
-    lexems = lexem_analysis(ua_code)
+def parse_code(u_code):
+    lexems = lexem_analysis(u_code)
     vars = {}
+    funcs = {}
     operators = ['+', '-', '*', '/', '**', '//', '%', '&', '|', '^', '~']
     s = Stack()
     i = 0
+    def call(func, args):
+        nonlocal s
+        nonlocal i
+        s.push(i)
+        for j in args:
+            s.push(j)
+    def ret():
+        nonlocal s
+        nonlocal i
+        i = s.pop().data
     while i < len(lexems):
         lexem = lexems[i][0]
         if lexem.startswith('//'): continue
@@ -26,11 +29,17 @@ def parse_code(ua_code):
                 print(vars[lexems[i][1]])
         elif lexem == "var":
             vars[f'{lexems[i][1]}'] = lexems[i][2].replace('"', '', -1).replace("__", " ", -1)
+        elif lexem == "delete":
+            vars.pop(lexems[i][1], "")
+            funcs.pop(lexems[i][1], "")
         elif lexem == "input":
             tmp = input(lexems[i][2].replace('"', '', 2).replace("__", " ", -1))
             vars[lexems[i][1]] = tmp
         elif lexem == "push":
-            s.push(lexems[i][1])
+            if lexems[i][1].startswith("&"):
+                s.push(vars[lexems[i][1].replace("&")])
+            else:
+                s.push(lexems[i][1])
         elif lexem == "popto":
             vars[lexems[i][1]] = s.pop().data
         elif lexem == "pop":
